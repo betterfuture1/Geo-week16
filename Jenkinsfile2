@@ -1,12 +1,9 @@
 pipeline {
     agent any
-    environment {
-         withSonarQubeEnv ('SONAR_TOKEN')
-    }
+    
     
     tools{
         maven 'M2_HOME'
-        sonarqube'SONAR_RUNNER_HOME'
     }
     stages{
         stage ('sonarqube scan'){
