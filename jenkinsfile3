@@ -9,6 +9,11 @@ pipeline {
                 sh 'pwd'
                 sh 'id'
                 sh "mkdir \$(date '+%Y%m%d_%H%M%S')"
+                
+            }
+        }
+        stage (python script){
+            steps{
                 sh 'python3 -version'
                 sh 'nmp --version'
             }
