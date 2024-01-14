@@ -6,7 +6,7 @@ pipeline {
     
     tools{
         maven 'M2_HOME'
-        'sonnarcube scanner'
+        sonarqube'SONAR_RUNNER_HOME'
     }
     stages{
         stage ('sonarqube scan'){
