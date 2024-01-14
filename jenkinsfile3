@@ -3,11 +3,13 @@ pipeline{
         label 'ansible'
     }
     stages{
-        stage(check the current directory){
+        stage('check the current directory'){
             steps{
                 sh 'pwd'
                 sh 'whoami'
                 sh "mkdir \$(date '+%Y%m%d_%H%M%S')"
+                sh 'python3 -version'
+                sh 'nmp --version'
             }
         }
     }
