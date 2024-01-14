@@ -7,14 +7,15 @@ pipeline {
         stage('check the current directory'){
             steps{
                 sh 'pwd'
-                sh 'id'
-                sh "mkdir \$(date '+%Y%m%d_%H%M%S')"
+                //sh 'id'
+                //sh "mkdir \$(date '+%Y%m%d_%H%M%S')"
                 sh 'nmp --version'
             }
         }
         stage (python script){
             steps{
-                agent {docker{ image 'python:3.10-slim' }}
+                agent {
+                    docker { image 'python:3.10-slim' }}
                 sh 'python3 -version'
                 
             }
