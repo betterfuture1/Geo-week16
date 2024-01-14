@@ -23,7 +23,7 @@ pipeline {
         }
         stage('upload artifact'){
             steps{
-                sh 'curl -uadmin:AP4KPM9fdPBKovDyeDco7NnkZZV -T /var/lib/jenkins/workspace/week16-project-geo/geo-pipeline/target/biomedical-0-0-2-SNAPSHOT.jar \
+                sh 'curl -uadmin:AP4KPM9fdPBKovDyeDco7NnkZZV -T target/bio*.jar \
                  "http://54.160.65.219:8081/artifactory/geoapp/"'
 
             }
