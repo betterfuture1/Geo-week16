@@ -11,8 +11,7 @@ pipeline {
                 withSonarQubeEnv('sonarserver'){
 
                 
-                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-                 -Dsonar.projectKey=betterfuture1_week16-geo'
+                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=betterfuture1_Geo-week16'
             }
         }
     }
