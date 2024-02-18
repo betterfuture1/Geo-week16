@@ -24,7 +24,7 @@ pipeline {
         }
         stage('upload artifact'){
             steps{
-                sh 'curl -uadmin:AP4KPM9fdPBKovDyeDco7NnkZZV -T target/bio*.jar "http://54.152.88.250:8081/artifactory/geoapp/"'
+                sh 'curl -uadmin:AP4KPM9fdPBKovDyeDco7NnkZZV -T target/bio*.jar "http://34.203.33.145:8081/artifactory/geoapp/"'
             }
         }
     stage ('image build'){
