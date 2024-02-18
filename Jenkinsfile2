@@ -24,7 +24,7 @@ pipeline {
         }
         stage('upload artifact'){
             steps{
-                sh 'curl -uadmin:AP4KPM9fdPBKovDyeDco7NnkZZV -T target/bio*.jar "http://54.152.88.250:8081/artifactory/geoapp/"'
+                sh 'curl -uadmin:AP4KPM9fdPBKovDyeDco7NnkZZV -T target/bio*.jar "http://34.203.33.145:8081/artifactory/geoapp/"'
             }
         }
     stage ('image build'){
@@ -36,8 +36,8 @@ pipeline {
     }
     stage('docker push'){
         steps {
-            sh 'docker tag geoapp:latest 111330689043.dkr.ecr.us-east-1.amazonaws.com/geoapp:latest'
-            sh 'docker push 111330689043.dkr.ecr.us-east-1.amazonaws.com/geoapp:latest'
+            sh 'docker tag geoapp:latest 111330689043.dkr.ecr.us-east-1.amazonaws.com/geoapp:${BUILD_ID}'
+            sh 'docker push 111330689043.dkr.ecr.us-east-1.amazonaws.com/geoapp:${BUILD_ID}'
         }
     }
    }
